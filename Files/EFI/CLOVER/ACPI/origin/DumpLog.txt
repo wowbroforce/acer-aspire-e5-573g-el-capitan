@@ -1,0 +1,65 @@
+3:640  3:183  Found UEFI Acpi 2.0 RSDP at 96FFD014
+3:640  0:000  Saving ACPI tables from RSDP 96FFD014 to EFI\CLOVER\ACPI\origin ...
+3:640  0:000   96FFD014: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36 -> RSDP.aml
+3:681  0:041    (Xsdt: 96FCB188, Rsdt: 96FCB0C4)
+3:681  0:000    96FCB188: 'XSDT', 'ACRPRDCT', Rev: 1, Len: 220 -> XSDT.aml
+3:720  0:039    96FCB0C4: 'RSDT', 'ACRPRDCT', Rev: 1, Len: 128 -> RSDT.aml
+3:783  0:063    Tables in Xsdt: 23
+3:783  0:000    0. 96FED000: 'FACP', 'ACRPRDCT', Rev: 5, Len: 268 -> FACP.aml
+3:830  0:046        (Dsdt: 96FD7000, Facs: 96FB7000, XDsdt: 96FD7000, XFacs: 0)
+3:830  0:000        96FD7000: 'DSDT', 'ACRPRDCT', Rev: 2, Len: 68386 -> DSDT.aml
+3:883  0:053        96FB7000: 'FACS', Ver: 2, Len: 64 -> FACS.aml
+3:926  0:042    1. 96FFC000: 'TCPA', 'ACRPRDCT', Rev: 2, Len: 50 -> TCPA.aml
+3:969  0:043    2. 96FFB000: 'UEFI', 'ACRPRDCT', Rev: 1, Len: 566 -> UEFI.aml
+4:012  0:043    3. 96FFA000: 'UEFI', 'ACRPRDCT', Rev: 1, Len: 66 -> UEFI.aml
+4:108  0:095    4. 96FF9000: 'SSDT', 'ACRPRDCT', Rev: 2, Len: 1174 -> SSDT-0.aml
+4:151  0:042    5. 96FF8000: 'SSDT', 'ACRPRDCT', Rev: 2, Len: 75 -> SSDT-1.aml
+4:194  0:043    6. 96FF7000: 'TPM2', 'ACRPRDCT', Rev: 3, Len: 52 -> TPM2.aml
+4:236  0:042    7. 96FF3000: 'SSDT', 'ACRPRDCT', Rev: 1, Len: 13640 -> SSDT-2.aml
+4:287  0:050    8. 96FF1000: 'ASF!', 'ACRPRDCT', Rev: 32, Len: 165 -> ASF!.aml
+4:330  0:043    9. 96FF0000: 'ASPT', 'ACRPRDCT', Rev: 7, Len: 52 -> ASPT.aml
+4:418  0:088    10. 96FEF000: 'BOOT', 'ACRPRDCT', Rev: 1, Len: 40 -> BOOT.aml
+4:466  0:047    11. 96FEE000: 'DBGP', 'ACRPRDCT', Rev: 1, Len: 52 -> DBGP.aml
+4:513  0:047    12. 96FEC000: 'HPET', 'ACRPRDCT', Rev: 1, Len: 56 -> HPET.aml
+4:559  0:046    13. 96FEB000: 'LPIT', 'ACRPRDCT', Rev: 1, Len: 148 -> LPIT.aml
+4:606  0:046    14. 96FEA000: 'APIC', 'ACRPRDCT', Rev: 3, Len: 140 -> APIC.aml
+4:653  0:046    15. 96FE9000: 'MCFG', 'ACRPRDCT', Rev: 1, Len: 60 -> MCFG.aml
+4:724  0:071    16. 96FE8000: 'SSDT', 'ACRPRDCT', Rev: 2, Len: 1337 -> SSDT-3.aml
+4:771  0:046    17. 96FD6000: 'SSDT', 'ACRPRDCT', Rev: 2, Len: 2932
+ Found hidden SSDT 4 pcs
+4:772  0:000        * 8CA11598: '', '0', Rev: 112, Len: 52  00 21 00 04 34 00 00 00 70 74 61 6C 00 00 00 00       * 96CCF618: 'SSDT', 'ApIst', Rev: 2, Len: 1450  53 53 44 54 AA 05 00 00 02 CC 50 6D 52 65 66 00 Internal length = 1450 -> SSDT-5x.aml
+4:819  0:047        * 96CCE918: 'SSDT', 'Cpu0Cst', Rev: 2, Len: 979  53 53 44 54 D3 03 00 00 02 AC 50 6D 52 65 66 00 Internal length = 979 -> SSDT-6x.aml
+4:866  0:047        * 96CCDD98: 'SSDT', 'ApCst', Rev: 2, Len: 281  53 53 44 54 19 01 00 00 02 E8 50 6D 52 65 66 00 Internal length = 281 -> SSDT-7x.aml
+4:913  0:047   -> SSDT-4.aml
+4:960  0:046    18. 96FD0000: 'SSDT', 'ACRPRDCT', Rev: 2, Len: 23244 -> SSDT-8.aml
+5:054  0:094    19. 96FCD000: 'SSDT', 'ACRPRDCT', Rev: 1, Len: 12177 -> SSDT-9.aml
+5:122  0:067    20. 96FCC000: 'CSRT', 'ACRPRDCT', Rev: 1, Len: 196 -> CSRT.aml
+5:172  0:049    21. 96FCA000: 'FPDT', 'ACRPRDCT', Rev: 1, Len: 68 -> FPDT.aml
+5:222  0:049    22. 96FC9000: 'BGRT', 'ACRPRDCT', Rev: 1, Len: 56 -> BGRT.aml
+5:271  0:049    Tables in Rsdt: 23
+5:271  0:000    0. 96FED000: 'FACP', 'ACRPRDCT', Rev: 5, Len: 268
+5:271  0:000        (Dsdt: 96FD7000, Facs: 96FB7000, XDsdt: 96FD7000, XFacs: 0)
+5:271  0:000        96FD7000: 'DSDT', 'ACRPRDCT', Rev: 2, Len: 68386
+5:272  0:000        96FB7000: 'FACS', Ver: 2, Len: 64
+5:272  0:000    1. 96FFC000: 'TCPA', 'ACRPRDCT', Rev: 2, Len: 50
+5:272  0:000    2. 96FFB000: 'UEFI', 'ACRPRDCT', Rev: 1, Len: 566
+5:272  0:000    3. 96FFA000: 'UEFI', 'ACRPRDCT', Rev: 1, Len: 66
+5:272  0:000    4. 96FF9000: 'SSDT', 'ACRPRDCT', Rev: 2, Len: 1174
+5:272  0:000    5. 96FF8000: 'SSDT', 'ACRPRDCT', Rev: 2, Len: 75
+5:272  0:000    6. 96FF7000: 'TPM2', 'ACRPRDCT', Rev: 3, Len: 52
+5:272  0:000    7. 96FF3000: 'SSDT', 'ACRPRDCT', Rev: 1, Len: 13640
+5:272  0:000    8. 96FF1000: 'ASF!', 'ACRPRDCT', Rev: 32, Len: 165
+5:272  0:000    9. 96FF0000: 'ASPT', 'ACRPRDCT', Rev: 7, Len: 52
+5:272  0:000    10. 96FEF000: 'BOOT', 'ACRPRDCT', Rev: 1, Len: 40
+5:272  0:000    11. 96FEE000: 'DBGP', 'ACRPRDCT', Rev: 1, Len: 52
+5:272  0:000    12. 96FEC000: 'HPET', 'ACRPRDCT', Rev: 1, Len: 56
+5:272  0:000    13. 96FEB000: 'LPIT', 'ACRPRDCT', Rev: 1, Len: 148
+5:272  0:000    14. 96FEA000: 'APIC', 'ACRPRDCT', Rev: 3, Len: 140
+5:272  0:000    15. 96FE9000: 'MCFG', 'ACRPRDCT', Rev: 1, Len: 60
+5:272  0:000    16. 96FE8000: 'SSDT', 'ACRPRDCT', Rev: 2, Len: 1337
+5:272  0:000    17. 96FD6000: 'SSDT', 'ACRPRDCT', Rev: 2, Len: 2932
+5:272  0:000    18. 96FD0000: 'SSDT', 'ACRPRDCT', Rev: 2, Len: 23244
+5:272  0:000    19. 96FCD000: 'SSDT', 'ACRPRDCT', Rev: 1, Len: 12177
+5:272  0:000    20. 96FCC000: 'CSRT', 'ACRPRDCT', Rev: 1, Len: 196
+5:272  0:000    21. 96FCA000: 'FPDT', 'ACRPRDCT', Rev: 1, Len: 68
+5:272  0:000    22. 96FC9000: 'BGRT', 'ACRPRDCT', Rev: 1, Len: 56
