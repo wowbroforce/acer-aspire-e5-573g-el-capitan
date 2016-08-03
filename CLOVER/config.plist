@@ -19,23 +19,9 @@
 			<array>
 				<dict>
 					<key>Comment</key>
-					<string>change EHC2 to EH02</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					RUhDMg==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUgwMg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>change _OSI to XOSI</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					X09TSQ==
@@ -57,6 +43,20 @@
 					<key>Replace</key>
 					<data>
 					RUgwMQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change EHC2 to EH02</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					RUhDMg==
+					</data>
+					<key>Replace</key>
+					<data>
+					RUgwMg==
 					</data>
 				</dict>
 			</array>
@@ -106,16 +106,22 @@
 			<string>SSDT-17.aml</string>
 			<string>SSDT-18.aml</string>
 			<string>SSDT-19.aml</string>
+			<string>SSDT-XOSI.aml</string>
+			<string>SSDT-LPC.aml</string>
 		</array>
 	</dict>
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>-v dart=0 nv_disable=1 kext-dev-mode=1</string>
+		<string>dart=0 nv_disable=1 kext-dev-mode=1</string>
 		<key>Debug</key>
 		<false/>
+		<key>DefaultVolume</key>
+		<string>LastBootedVolume</string>
 		<key>Legacy</key>
 		<string>LegacyBiosDefault</string>
+		<key>NeverHibernate</key>
+		<true/>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
@@ -123,8 +129,18 @@
 		<key>XMPDetection</key>
 		<string>Yes</string>
 	</dict>
+	<key>CPU</key>
+	<dict>
+		<key>UseARTFrequency</key>
+		<false/>
+	</dict>
 	<key>Devices</key>
 	<dict>
+		<key>Audio</key>
+		<dict>
+			<key>Inject</key>
+			<string>3</string>
+		</dict>
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
@@ -178,6 +194,8 @@
 			<true/>
 			<key>Legacy</key>
 			<true/>
+			<key>Linux</key>
+			<false/>
 			<key>Tool</key>
 			<true/>
 		</dict>
@@ -191,7 +209,7 @@
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<false/>
+			<true/>
 			<key>NVidia</key>
 			<false/>
 		</dict>
@@ -240,86 +258,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>HDMI-audio, port 0105, 0x16120003 0x16120005 0x16120006 0x16260006</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				AQULAAAEAAAHBQAA
-				</data>
-				<key>Name</key>
-				<string>AppleIntelBDWGraphicsFramebuffer</string>
-				<key>Replace</key>
-				<data>
-				AQULAAAIAACCAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>HDMI-audio, port 0204, 0x160e0001 0x161e0001 (1 of 2)</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				AQAeFgECAgIAACACAABQAQ==
-				</data>
-				<key>Name</key>
-				<string>AppleIntelBDWGraphicsFramebuffer</string>
-				<key>Replace</key>
-				<data>
-				AQAeFgEDAwMAACACAABQAQ==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>HDMI-audio, port 0105, 0x16060002 0x16060002 0x16160002 0x16260002 0x16220002 0x162b0002 0x162b0004 0x16260004 0x16220007 0x162b0008 0x16260008</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				AQUJAAAEAAAHBQAA
-				</data>
-				<key>Name</key>
-				<string>AppleIntelBDWGraphicsFramebuffer</string>
-				<key>Replace</key>
-				<data>
-				AQUJAAAIAACCAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Disable minStolenSize less or equal fStolenMemorySize assertion, 10.11.beta ( (based on Austere.J patch)</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				QTnEdj4=
-				</data>
-				<key>Name</key>
-				<string>AppleIntelBDWGraphicsFramebuffer</string>
-				<key>Replace</key>
-				<data>
-				QTnE6z4=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>HDMI-audio, port 0105, 0x16060000 0x160e0000 0x16160000 0x161e0000 0x16260000 0x162b0000 0x16220000</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				AQUJAAQAAAAEAAAA
-				</data>
-				<key>Name</key>
-				<string>AppleIntelBDWGraphicsFramebuffer</string>
-				<key>Replace</key>
-				<data>
-				AQUJAAAIAACCAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>HDMI-audio, port 0306, 0x16220007</string>
 				<key>Disabled</key>
 				<true/>
@@ -336,82 +274,18 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>HDMI-audio, port 0204, 0x16060002 0x16060002 0x16160002 0x16260002 0x16220002 0x162b0002 0x162b0004 0x16260004 0x16220007 0x162b0008 0x16260008</string>
+				<string>HDMI-audio, port 0204, 0x16060000 0x160e0000 0x16160000 0x161e0000 0x16260000 0x162b0000 0x16220000</string>
 				<key>Disabled</key>
 				<true/>
 				<key>Find</key>
 				<data>
-				AgQJAAAEAAAHBQAA
+				AgQJAAAIAACCAAAA
 				</data>
 				<key>Name</key>
 				<string>AppleIntelBDWGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
 				AgQJAAAIAACCAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>HDMI-audio, port 0105, 0x160e0001 0x161e0001</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				AQUJAAAEAAABEAAA
-				</data>
-				<key>Name</key>
-				<string>AppleIntelBDWGraphicsFramebuffer</string>
-				<key>Replace</key>
-				<data>
-				AQUJAAAIAACCAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>HDMI-audio, port 0204, 0x160e0001 0x161e0001 (2 of 2)</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				/wAAAAEAAABAAAAAAAA=
-				</data>
-				<key>Name</key>
-				<string>AppleIntelBDWGraphicsFramebuffer</string>
-				<key>Replace</key>
-				<data>
-				AgQJAAAIAACCAAAA/wA=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Boot graphics glitch, 10.10.x/10.11.x (credit lisai9093, cecekpawon)</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				AQAAdRc=
-				</data>
-				<key>Name</key>
-				<string>IOGraphicsFamily</string>
-				<key>Replace</key>
-				<data>
-				AQAA6xc=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>HDMI-audio, port 0204, 0x16120003 0x16120005 0x16120006 0x16260006</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				AgQLAAAEAAAHBQAA
-				</data>
-				<key>Name</key>
-				<string>AppleIntelBDWGraphicsFramebuffer</string>
-				<key>Replace</key>
-				<data>
-				AgQLAAAIAACCAAAA
 				</data>
 			</dict>
 			<dict>
@@ -432,18 +306,226 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>HDMI-audio, port 0204, 0x16060000 0x160e0000 0x16160000 0x161e0000 0x16260000 0x162b0000 0x16220000</string>
+				<string>Disable minStolenSize less or equal fStolenMemorySize assertion, 10.11.beta ( (based on Austere.J patch)</string>
 				<key>Disabled</key>
 				<true/>
 				<key>Find</key>
 				<data>
-				AgQJAAAIAACCAAAA
+				QTnEdj4=
+				</data>
+				<key>Name</key>
+				<string>AppleIntelBDWGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				QTnE6z4=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>AppleHDA ALC283 (2 of 4)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				PYUI7BA=
+				</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>
+				PQAAAAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-audio, port 0204, 0x160e0001 0x161e0001 (2 of 2)</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				/wAAAAEAAABAAAAAAAA=
+				</data>
+				<key>Name</key>
+				<string>AppleIntelBDWGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AgQJAAAIAACCAAAA/wA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-audio, port 0105, 0x160e0001 0x161e0001</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AQUJAAAEAAABEAAA
+				</data>
+				<key>Name</key>
+				<string>AppleIntelBDWGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AQUJAAAIAACCAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>AppleHDA ALC283 (#4 of 4, new in 10.11, credit lisai9093)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				PYMZ1BE=
+				</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>
+				PQAAAAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-audio, port 0105, 0x16120003 0x16120005 0x16120006 0x16260006</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AQULAAAEAAAHBQAA
+				</data>
+				<key>Name</key>
+				<string>AppleIntelBDWGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AQULAAAIAACCAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Boot graphics glitch, 10.10.x/10.11.x (credit lisai9093, cecekpawon)</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AQAAdRc=
+				</data>
+				<key>Name</key>
+				<string>IOGraphicsFamily</string>
+				<key>Replace</key>
+				<data>
+				AQAA6xc=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-audio, port 0105, 0x16060000 0x160e0000 0x16160000 0x161e0000 0x16260000 0x162b0000 0x16220000</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AQUJAAQAAAAEAAAA
+				</data>
+				<key>Name</key>
+				<string>AppleIntelBDWGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AQUJAAAIAACCAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-audio, port 0105, 0x16060002 0x16060002 0x16160002 0x16260002 0x16220002 0x162b0002 0x162b0004 0x16260004 0x16220007 0x162b0008 0x16260008</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AQUJAAAEAAAHBQAA
+				</data>
+				<key>Name</key>
+				<string>AppleIntelBDWGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AQUJAAAIAACCAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-audio, port 0204, 0x16120003 0x16120005 0x16120006 0x16260006</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AgQLAAAEAAAHBQAA
+				</data>
+				<key>Name</key>
+				<string>AppleIntelBDWGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AgQLAAAIAACCAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-audio, port 0204, 0x160e0001 0x161e0001 (1 of 2)</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AQAeFgECAgIAACACAABQAQ==
+				</data>
+				<key>Name</key>
+				<string>AppleIntelBDWGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AQAeFgEDAwMAACACAABQAQ==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>HDMI-audio, port 0204, 0x16060002 0x16060002 0x16160002 0x16260002 0x16220002 0x162b0002 0x162b0004 0x16260004 0x16220007 0x162b0008 0x16260008</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AgQJAAAEAAAHBQAA
 				</data>
 				<key>Name</key>
 				<string>AppleIntelBDWGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
 				AgQJAAAIAACCAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>AppleHDA ALC283 (3 of 4)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				PYQZ1BE=
+				</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>
+				PYMC7BA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>AppleHDA ALC283 (1 of 4)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				PYQI7BA=
+				</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>
+				PQAAAAA=
 				</data>
 			</dict>
 		</array>
@@ -457,10 +539,38 @@
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
-		<key>ProductName</key>
-		<string>MacBookAir6,2</string>
-		<key>Trust</key>
+		<key>BiosReleaseDate</key>
+		<string>02/11/16</string>
+		<key>BiosVendor</key>
+		<string>Apple Inc.</string>
+		<key>BiosVersion</key>
+		<string>MBP121.88Z.0167.B16.1602111810</string>
+		<key>Board-ID</key>
+		<string>Mac-E43C1C25D4880AD6</string>
+		<key>BoardManufacturer</key>
+		<string>Apple Inc.</string>
+		<key>BoardType</key>
+		<integer>10</integer>
+		<key>ChassisAssetTag</key>
+		<string>MacBook-Aluminum</string>
+		<key>ChassisManufacturer</key>
+		<string>Apple Inc.</string>
+		<key>ChassisType</key>
+		<string>08</string>
+		<key>Family</key>
+		<string>MacBook Pro</string>
+		<key>Manufacturer</key>
+		<string>Apple Inc.</string>
+		<key>Mobile</key>
 		<true/>
+		<key>ProductName</key>
+		<string>MacBookPro12,1</string>
+		<key>SerialNumber</key>
+		<string>C02PNDBXH1DP</string>
+		<key>Trust</key>
+		<false/>
+		<key>Version</key>
+		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
